@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { socials } from "../constants";
 import styles from "../styles";
 import { footerVariants } from "../utils/motion";
+import Image from "next/image";
+import headset from "../public/headset.svg";
 
 const Footer = () => (
   <motion.footer
@@ -22,8 +24,8 @@ const Footer = () => (
           type="button"
           className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]"
         >
-          <img
-            src="/headset.svg"
+          <Image
+            src={headset}
             alt="headset"
             className="w-[24px] h-[24px] object-contain"
           />
@@ -43,7 +45,7 @@ const Footer = () => (
 
             <div className="flex gap-4">
               {socials.map((social) => (
-                <img
+                <Image
                   key={social.name}
                   src={social.url}
                   alt={social.name}

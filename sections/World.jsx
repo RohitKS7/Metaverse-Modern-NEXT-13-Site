@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText, TitleText } from "../components";
+import fullmap from "../public/fullmap.svg";
 
 const World = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -29,11 +31,7 @@ const World = () => (
         variants={fadeIn("up", "easeIn", "0.3", 1)}
         className="relative mt-[68px] flex w-full lg:h-[550px] md:h-[360px] h-[170px]"
       >
-        <img
-          src="/fullmap.svg"
-          alt="map"
-          className="w-full h-full object-cover"
-        />
+        <Image src={fullmap} alt="map" className="w-full h-full object-cover" />
       </motion.div>
     </motion.div>
   </section>

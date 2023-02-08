@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "../styles";
 import { fadeIn } from "../utils/motion";
+import headset from "../public/headset.svg";
 
 // We are getting this "id, imgUrl, title" props from "{...world} spread".
 const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
@@ -14,9 +16,10 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
     } min-w-[170px] h-[600px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer `}
     onClick={() => handleClick(id)}
   >
-    <img
+    <Image
       src={imgUrl}
       alt={title}
+      placeholder="blur"
       className="absolute w-full h-full object-cover rounded-[24px]"
     />
     {active !== id ? (
@@ -28,8 +31,8 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
         <div
           className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]`}
         >
-          <img
-            src="/headset.svg"
+          <Image
+            src={headset}
             alt="headset"
             className="w-1/2 h-1/2 object-contain"
           />
